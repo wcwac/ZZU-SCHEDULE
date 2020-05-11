@@ -12,3 +12,6 @@ Tips：
 3. 将生成的ics文件导入您的日历管理工具。
 
 ![sample](https://github.com/wcwac/ZZU-SCHEDULE/blob/master/sample1.png?raw=true)
+
+本项目理论上对其他EAMS教务系统有效（/eams/courseTableForStd!courseTable.action）
+欢迎fork
