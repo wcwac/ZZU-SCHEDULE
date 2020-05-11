@@ -7,11 +7,11 @@ Tips：
 
 2. 下载本工具至与保存的网页同一目录，在终端中进入该目录执行本工具。
 
-![sample0.png](https://i.loli.net/2020/05/11/3IZ2BGoDOlzKyvW.png)
+![](https://github.com/wcwac/ZZU-SCHEDULE/blob/master/sample0.png?raw=true) https://i.loli.net/2020/05/11/3IZ2BGoDOlzKyvW.png
 
 3. 将生成的ics文件导入您的日历管理工具。
 
-![sample1.png](https://i.loli.net/2020/05/11/rpDVeU4nW12w67K.png)
+![](https://github.com/wcwac/ZZU-SCHEDULE/blob/master/sample1.png?raw=true) https://i.loli.net/2020/05/11/rpDVeU4nW12w67K.png
 
 本项目理论上对其他EAMS教务系统有效（/eams/courseTableForStd!courseTable.action）
 
