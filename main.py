@@ -1,6 +1,7 @@
 # -*- coding:UTF8 -*-
 # Author: wcwac
 import re
+import codecs
 from uuid import uuid4 as uid
 import datetime
 from datetime import datetime, timedelta
@@ -39,7 +40,7 @@ def makelist(s):
 
 
 filename = input("请输入网页文件的文件名：(input.htm)") or 'input.htm'
-with open(filename, "r") as f:
+with codecs.open(filename, "r" , 'utf-8') as f:
 	fl = f.read()
 	classes = re.findall(r"<td.*class.*td>", fl)
 	for i in classes:
@@ -67,5 +68,5 @@ with open(filename, "r") as f:
 string = string + "\nEND:VCALENDAR"
 
 filename = input("请输入输出文件的文件名：(result.ics)") or 'result.ics'
-with open(filename,"w") as out:
+with codecs.open(filename,"w",'utf-8') as out:
 	out.write(string)
