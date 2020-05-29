@@ -5,7 +5,7 @@ import codecs
 from uuid import uuid4 as uid
 import datetime
 from datetime import datetime, timedelta
-times = [[0, 45], [55, 100], [130, 175], [245, 290], [360, 405], 
+times = [[0, 45], [55, 100], [130, 175], [185, 230], [360, 405], 
 	[415, 460], [480, 525], [535, 580], [660, 705], [715, 760]]
 string = """BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//ZZU//SCHEDULE//EN"""
 
