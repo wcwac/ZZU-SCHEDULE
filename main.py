@@ -10,7 +10,7 @@ times = [[0, 45], [55, 100], [130, 175], [185, 230], [360, 405],
 string = """BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//ZZU//SCHEDULE//EN"""
 
 weeknum = 20 #int(input("请输入本学期周数：（20）") or '20') ##由于所有课程会在20周内结束 因此预处理20周日期即可
-start = int(input("请输入学期开始的时间：（20200210）") or '20200210')
+start = int(input("请输入学期开始的时间：（20200914）") or '20200914')
 weeks = [None]
 now = datetime(int(start/10000), int(start/100) % 100, start % 100)
 for i in range(weeknum):
@@ -62,7 +62,8 @@ with codecs.open(filename, "r" , 'utf-8') as f:
 					string = string + "\nBEGIN:VEVENT\nDTSTAMP:20200101T000000Z\nUID:" + str(uid()) + "\nSUMMARY:" + iclassname +"\n"
 					string = string + "DTSTART:" + (weeks[t][iday] + timedelta(minutes=times[nthclass][0])).strftime("%Y%m%dT%H%M%SZ\n")
 					string = string + "DTEND:" + (weeks[t][iday] + timedelta(minutes=times[nthclass+ilength][1])).strftime("%Y%m%dT%H%M%SZ\n")
-					string = string + "DESCRIPTION:" + iclass[j+1][1:-1] + "\nEND:VEVENT"
+					string = string + "DESCRIPTION:" + iclass[j+1][1:-1] + "\n"
+					string = string + "LOCATION:" + ilocation + "\nEND:VEVENT"
 
 
 string = string + "\nEND:VCALENDAR"
