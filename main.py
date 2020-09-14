@@ -54,7 +54,10 @@ with codecs.open(filename, "r" , 'utf-8') as f:
 		iclass = list(filter(None, re.search(r'title=".*?"', i).group()[7:-1].split(';')))
 		for j in range(0, len(iclass), 2):
 			iclassname = iclass[j]
-			iweeks, ilocation = iclass[j+1][1:-1].split(',')
+			if iclass[j+1].find(',')>=0:
+				iweeks, ilocation = iclass[j+1][1:-1].split(',')
+			else:
+				iweeks, ilocation = iclass[j+1][1:-1],'无教室'
 			iweeks = iweeks.split()
 			for k in iweeks:
 				ilist=makelist(k)
