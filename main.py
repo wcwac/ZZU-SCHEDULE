@@ -5,6 +5,28 @@ import codecs
 from uuid import uuid4 as uid
 import datetime
 from datetime import datetime, timedelta
+
+def detect_file_encoding(filename: str) -> str:
+	"""
+	Detect the encoding of a file
+	"""
+	encodings: List[str] = ['utf-8', 'gbk', 'gb18030', 'gb2312', 'big5']
+	for encoding in encodings:
+		try:
+			with codecs.open(filename, 'r', encoding=encoding) as f:
+				f.read()
+				return encoding
+		except UnicodeDecodeError:
+			pass
+	return None
+
+def open_file(filename: str, mode: str='r') -> TextIO:
+	"""
+	Open a file with the correct encoding
+	"""
+	encoding = detect_file_encoding(filename)
+	return codecs.open(filename, mode, encoding)
+
 times = [[0, 45], [55, 100], [130, 175], [185, 230], [360, 405], 
 	[415, 460], [480, 525], [535, 580], [660, 705], [715, 760]]
 string = """BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//ZZU//SCHEDULE//EN"""
@@ -21,7 +43,7 @@ for i in range(weeknum):
 	weeks.append(temp)
 
 
-def makelist(s):
+def makelist(s: str) -> List[int]:
 	flag = 0
 	ans = []
 	if s[0] == '单': s, flag = s[1:], 1
@@ -39,8 +61,8 @@ def makelist(s):
 	return ans
 
 
-filename = input("请输入网页文件的文件名：(input.htm)") or 'input.htm'
-with codecs.open(filename, "r" , 'utf-8') as f:
+filename = input("请输入网页文件的文件名：(课表.xls)") or '课表.xls'
+with open_file(filename) as f:
 	fl = f.read()
 	classes = re.findall(r"<td.*class.*td>", fl)
 	for i in classes:
