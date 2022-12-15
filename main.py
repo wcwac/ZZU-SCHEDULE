@@ -5,6 +5,7 @@ import codecs
 from uuid import uuid4 as uid
 import datetime
 from datetime import datetime, timedelta
+from typing import List, TextIO
 
 def detect_file_encoding(filename: str) -> str:
 	"""
