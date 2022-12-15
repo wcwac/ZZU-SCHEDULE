@@ -62,7 +62,7 @@ def makelist(s: str) -> List[int]:
 	return ans
 
 
-filename = input("请输入网页文件的文件名：(课表.xls)") or '课表.xls'
+filename = input("请输入课程表文件的文件名：(课表.xls)") or '课表.xls'
 with open_file(filename) as f:
 	fl = f.read()
 	classes = re.findall(r"<td.*class.*td>", fl)
