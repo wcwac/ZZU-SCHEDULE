@@ -1,18 +1,38 @@
 # ZZU-SCHEDULE
-郑州大学课程表ics导出工具 Zhengzhou University Course Schedule Export Tool
+郑州大学课程表ics导出工具 
 
-Tips：
+Zhengzhou University Course Schedule Export Tool
 
-1. 登陆郑州大学教务系统、查看课表，选择右上角的打印，在弹出的新窗口中右键另存为将网页保存。
+---
 
-2. 下载本工具至与保存的网页同一目录，在终端中进入该目录执行本工具。
+## 使用说明
 
-![](https://github.com/wcwac/ZZU-SCHEDULE/blob/master/sample0.png?raw=true) https://i.loli.net/2020/05/11/3IZ2BGoDOlzKyvW.png
+1. 克隆本项目
 
-3. 将生成的ics文件导入您的日历管理工具。
+```shell
+git clone https://github.com/wcwac/ZZU-SCHEDULE.git
+```
 
-![](https://github.com/wcwac/ZZU-SCHEDULE/blob/master/sample1.png?raw=true) https://i.loli.net/2020/05/11/rpDVeU4nW12w67K.png
+2. 登陆教务系统，下载课程表文件
 
-本项目理论上对其他EAMS教务系统有效（/eams/courseTableForStd!courseTable.action）
+![](./samples/7XMK7mcsHi.png) 
 
-欢迎fork
+![](./samples/OCzQ0uI2xc.png)
+
+3. 将课程表文件放至项目文件夹中
+
+![](./samples/PmMHWs1B1E.png)
+
+4. 在cmd中运行main.py，并输入需要的信息
+
+```shell
+python main.py
+```
+
+![](./samples/fvu9ig2DeY.png)
+
+5. 检查输出的课程表文件
+
+![](./samples/P7vXUkkYk4.png)
+
+本项目理论上对类似的教务系统有效（特征：/eams/courseTableForStd!courseTable.action）
